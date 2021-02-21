@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1>Update Your Blog</h1>
+
+<form action="{%url 'update' blog.id %}" method="post">
+    {%csrf_token%}
+    <p>title: <input type= "text" name="title" value= "{{blog.title}}"></p>
+    <p>writer: <input type="text" name="writer" value="{{blog.writer}}"></p>
+    body: <textarea name="body" id="" cols="30" rows="10" >{{blog.body}}</textarea>
+    <button type="submit">submit</button>
+</form>
+{%endblock%}
